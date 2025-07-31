@@ -1,0 +1,125 @@
+:root {
+  --rosa: #f2c6cf;
+  --bege: #f8f1e7;
+  --box-bg: #2c2c2c;
+  --texto-claro: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.font1 {
+  font-family: "Pacifico", cursive;
+}
+.font2 {
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  background-color: var(--bege);
+  color: #333;
+}
+
+header {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--rosa);
+  color: #333;
+}
+header h1 {
+  font-size: 5em;
+  text-shadow: 10px 10px 3px rgba(0, 0, 0, 0.3);
+}
+header p {
+  font-size: 1.5em;
+}
+
+.carrossel-container {
+  overflow: hidden;
+  max-width: 95%;
+  margin: 2rem auto;
+  background-color: var(--box-bg);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.carrossel-track {
+  display: flex;
+  width: fit-content;
+  animation: deslizar 30s linear infinite;
+}
+
+.carrossel-track img {
+  width: 260px;
+  height: auto;
+  margin: 1rem;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+@keyframes deslizar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Bio */
+section.bio {
+  margin: 4rem auto;
+  padding: 2rem;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+}
+
+.imagem-pixel {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-image: url('foto-drielly.jpg');
+  background-size: cover;
+  filter: contrast(0) brightness(0);
+  animation: pixeliza 1.5s forwards ease-in-out;
+}
+
+@keyframes pixeliza {
+  0% {
+    filter: contrast(0) brightness(0);
+    clip-path: inset(50% 50% 50% 50%);
+  }
+  100% {
+    filter: contrast(1) brightness(1);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.descricao {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 1s 1.6s forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carrossel-track {
+    flex-direction: column;
+    animation: none;
+  }
+
+  .carrossel-track img {
+    width: 100%;
+  }
+}
