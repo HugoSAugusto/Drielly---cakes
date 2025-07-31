@@ -58,6 +58,11 @@ header p {
   margin: 1rem;
   border-radius: 1rem;
   flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.carrossel-track img:hover {
+  transform: scale(1.05);
 }
 
 @keyframes deslizar {
@@ -113,13 +118,50 @@ section.bio {
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .carrossel-track img {
+    width: 200px;
+    margin: 0.75rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .carrossel-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
   .carrossel-track {
-    flex-direction: column;
+    flex-wrap: nowrap;
     animation: none;
+    gap: 1rem;
   }
 
   .carrossel-track img {
+    width: 80%;
+    scroll-snap-align: center;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .carrossel-container {
+    overflow: hidden;
     width: 100%;
+  }
+
+  .carrossel-track {
+    display: flex;
+    animation: deslizar 40s linear infinite;
+    gap: 1rem;
+    width: max-content;
+  }
+
+  .carrossel-track img {
+    width: 85vw;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 }
