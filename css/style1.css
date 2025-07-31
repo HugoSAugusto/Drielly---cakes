@@ -117,6 +117,68 @@ section.bio {
   }
 }
 
+/* Tabela */
+.cards-container {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: var(--bege);
+}
+.cards-container h2 {
+  margin-bottom: 2rem;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.card {
+  background-color: var(--rosa);
+  color: #333;
+  padding: 2rem;
+  width: 200px;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+/* Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: left;
+  position: relative;
+}
+.fechar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* Responsivo */
 @media (max-width: 1024px) {
   .carrossel-track img {
@@ -142,26 +204,45 @@ section.bio {
     scroll-snap-align: center;
     margin: 1rem 0;
   }
+
+   .modal-content {
+    max-width: 700px;
+    font-size: 1.2rem;
+    padding: 3rem;
+  }
 }
 
 @media (max-width: 650px) {
   .carrossel-container {
-    overflow: hidden;
-    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .carrossel-track {
-    display: flex;
-    animation: deslizar 40s linear infinite;
-    gap: 1rem;
-    width: max-content;
+    flex-wrap: nowrap;
+    animation: deslizarMobile 10s linear infinite; /* velocidade aumentada */
   }
 
   .carrossel-track img {
-    width: 85vw;
-    height: auto;
+    width: 80%;
     flex-shrink: 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    scroll-snap-align: center;
+    margin: 1rem auto;
+  }
+
+   .modal-content {
+    max-width: 600px;
+    font-size: 1.1rem;
+    padding: 2.5rem;
+  }
+
+  @keyframes deslizarMobile {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 }
