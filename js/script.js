@@ -4,10 +4,10 @@ const modalTexto = document.getElementById("modalTexto");
 const fechar = document.querySelector(".fechar");
 
 const descricoes = {
-  pequeno: "<h3>Bolo Pequeno</h3><p>Ideal para até 6 pessoas.<br> Sabor personalizado. R$ 50,00</p>",
-  medio: "<h3>Bolo Médio</h3><p>Serve até 10 pessoas.<br> Decoração simples ou temática. R$ 80,00</p>",
-  grande: "<h3>Bolo Grande</h3><p>Perfeito para festas!<br> Serve até 20 pessoas.<br> R$ 120,00</p>",
-  cupcake: "<h3>Cupcakes</h3><p>Deliciosos e decorados. R$ 6,00 (unid) ou R$ 65,00 (12 unidades)</p>",
+  pequeno: `<div class="card-descricao"><h3>Bolo Pequeno</h3><p>Ideal para até 6 pessoas.<br> Sabor personalizado. R$50,00</p>`,
+  medio: `<div class="card-descricao"><h3>Bolo Médio</h3><p>Serve até 10 pessoas.<br> Decoração simples ou temática. R$80,00</p></div>`,
+  grande: `<div class="card-descricao"><h3>Bolo Grande</h3><p>Perfeito para festas!<br> Serve até 20 pessoas.<br> R$120,00</p></div>`,
+  cupcake: `<div class="card-descricao"><h3>Cupcakes</h3><p>Deliciosos e decorados. R$6,00 (unid) ou R$65,00 (12 unidades)</p></div>`,
 };
 
 cards.forEach(card => {
