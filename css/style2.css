@@ -1,0 +1,78 @@
+.personalize-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--bege);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  text-align: center;
+}
+
+.personalize-container form {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.coluna {
+  flex: 1 1 250px;
+  min-width: 250px;
+  background: var(--rosa);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.coluna h3 {
+  font-family: 'Pacifico', cursive;
+  color: #a84b6a;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.coluna label {
+  display: block;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.coluna input[type="checkbox"],
+.coluna input[type="radio"] {
+  margin-right: 0.6rem;
+  cursor: pointer;
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+
+.resultado {
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #a84b6a;
+}
+
+.btn-whatsapp {
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2.5rem;
+  background-color: #25D366; /* verde WhatsApp */
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe57;
+}
+
+
