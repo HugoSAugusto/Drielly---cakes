@@ -151,6 +151,24 @@ section.bio {
     box-shadow: 0 0 25px rgba(0,0,0,0.3);
 }
 
+.btn-personalizar {
+    display: inline-block;
+  
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-personalizar:hover {
+    justify-content: center;
+    background-color: #ff85c1;
+}
+
 /* Modal */
 .modal-overlay {
   display: none;
